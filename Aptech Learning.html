@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js" integrity="sha512-fGDQ3tI4KUfM35YbhCdxfU8w0lk/iMn90KMhFZW9n0IYZYlxEgILSv7Q7uxF6S0vN2eSUc2nvWLnpQu03I3jNw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.min.js" integrity="sha512-DxzllNa4ESjI+oxJZkjKoOo30Y3RZC1JctQhU2D9f7lpEIyEcSmRW3E1himeCPvHbrkaUpxK3vNhJcmGb3Sp6w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <title>Aptech Learning</title>
+</head>
+
+<body ng-app="myApp">
+    <p>
+        <a href="#Cism">CPISM</a><br>
+        <a href="#Dism">DISM</a><br>
+        <a href="#Hdse1">HDSE-1</a><br>
+        <a href="#Hdse2">HDSE-2</a><br>
+    </p><br>
+    <p>Click on the links to read about Aptech Learning.</p>
+    <div ng-view style="background-color: darkorange; padding:20px; height:550px; width: 850px; margin-left: 10%;"></div>
+    <script type="text/javascript">
+        var app = angular.module("myApp", ["ngRoute"]);
+        app.config(function($routeProvider) {
+            $routeProvider
+                .when("/", {
+                    templateUrl: "indiaTourism.html"
+                })
+                .when("/agra", {
+                    templateUrl: "Agra.html"
+                })
+                .when("/goa", {
+                    templateUrl: "goa.html"
+                });
+
+        });
+    </script>
+
+</body>
+
+</html>
